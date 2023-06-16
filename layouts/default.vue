@@ -6,7 +6,7 @@
         <ul class="flex gap-4">
           <li><nuxt-link to="/">Home</nuxt-link></li>
           <li><nuxt-link to="/about">About</nuxt-link></li>
-          <li><nuxt-link to="/products" class="btn">Products</nuxt-link></li>
+          <li><nuxt-link to="/design" class="btn">Design</nuxt-link></li>
         </ul>
       </nav>
     </header>
@@ -23,7 +23,7 @@
         <ul class="flex gap-4">
           <li><nuxt-link to="/">Home</nuxt-link></li>
           <li><nuxt-link to="/about">About</nuxt-link></li>
-          <li><nuxt-link to="/products">Products</nuxt-link></li>
+          <li><nuxt-link to="/design">Design</nuxt-link></li>
         </ul>
       </nav>
     </footer>
