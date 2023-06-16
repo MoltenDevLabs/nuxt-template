@@ -1,13 +1,13 @@
 <template>
   <div>
     <h1>Products/:id View</h1>
-    <h3>Product details for id: {{ id }}</h3>
+    <h3>Products details for: {{ id }}</h3>
   </div>
 </template>
 
 <script setup>
 definePageMeta({
-  layout: 'custom',
+  layout: 'design',
 });
 
 const { id } = useRoute().params
