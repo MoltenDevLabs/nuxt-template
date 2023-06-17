@@ -2,9 +2,10 @@
   <div>
     <header class="shadow-sm bg-white">
       <nav class="container mx-auto p-4 flex justify-between">
-        <nuxt-link to="/" class="font-bold">LOGO Products Page</nuxt-link>
+        <nuxt-link to="/" class="font-bold">LOGO</nuxt-link>
         <ul class="flex gap-4">
-          <li><nuxt-link to="/palette">Palette</nuxt-link></li>
+          <li><nuxt-link to="/design/palette">Palette</nuxt-link></li>
+          <li><nuxt-link to="/design/typography">Trypography</nuxt-link></li>
           <li><nuxt-link to="/design" class="btn">Design</nuxt-link></li>
         </ul>
       </nav>
@@ -18,8 +19,10 @@
 
     <footer class="">
       <nav class="container mx-auto p-4 flex justify-between border-t-2">
-        <nuxt-link to="/" class="font-bold">LOGO Products Page</nuxt-link>
+        <nuxt-link to="/" class="font-bold">LOGO</nuxt-link>
         <ul class="flex gap-4">
+          <li><nuxt-link to="/design/palette">Palette</nuxt-link></li>
+          <li><nuxt-link to="/design/typography">Trypography</nuxt-link></li>
           <li><nuxt-link to="/design">Design</nuxt-link></li>
         </ul>
       </nav>
@@ -27,8 +30,4 @@
   </div>
 </template>
 
-<style scooped>
-.router-link-exact-active {
-  color: #12b488;
-}
-</style>
+<style scooped></style>
