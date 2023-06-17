@@ -1,8 +1,10 @@
 <template>
   <div>
     <header class="shadow-sm bg-white">
-      <nav class="container mx-auto p-4 flex justify-between">
-        <nuxt-link to="/" class="font-bold">LOGO</nuxt-link>
+      <nav class="container mx-auto p-4 flex items-center justify-between">
+        <nuxt-link to="/" class="font-bold">
+          <nuxt-icon name="logo" filled />
+        </nuxt-link>
         <ul class="flex gap-4">
           <li><nuxt-link to="/">Home</nuxt-link></li>
           <li><nuxt-link to="/about">About</nuxt-link></li>
@@ -18,16 +20,25 @@
     <!-- Here ends the page content -->
 
     <footer class="">
-      <nav class="container mx-auto p-4 flex justify-between border-t-2">
-        <nuxt-link to="/" class="font-bold">LOGO</nuxt-link>
+      <nav class="container mx-auto p-4 flex items-center justify-between border-t-2">
+        <nuxt-link to="/" class="font-bold">
+          <nuxt-icon name="logo" filled />
+        </nuxt-link>
         <ul class="flex gap-4">
           <li><nuxt-link to="/">Home</nuxt-link></li>
           <li><nuxt-link to="/about">About</nuxt-link></li>
-          <li><nuxt-link to="/design">Design</nuxt-link></li>
+          <li><nuxt-link to="/design" class="btn">Design</nuxt-link></li>
         </ul>
       </nav>
     </footer>
   </div>
 </template>
 
-<style scooped></style>
+<style scooped>
+.router-link-exact-active {
+  @apply text-tertiary-500;
+}
+.nuxt-icon svg {
+    @apply text-5xl text-center align-middle;
+  }
+</style>
