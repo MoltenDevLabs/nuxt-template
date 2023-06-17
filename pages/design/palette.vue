@@ -1,5 +1,5 @@
 <template>
-  <div class="flex gap-2">
+  <div class="container flex gap-2">
     <div class="flex flex-col border w-full sm:w-1/3 text-center">
       <div>
         <h4 class="text-center border-b">Brand Color Scheme</h4>
