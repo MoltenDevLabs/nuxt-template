@@ -1,0 +1,45 @@
+*, ::before, ::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Lato", "Merriweather", sans-serif;
+}
+
+@layer base {
+    h1 {
+      @apply /* font-header */ text-8xl font-light tracking-tighter;
+    }
+    h2 {
+      @apply /* font-header */ text-6xl font-light tracking-tight;
+    }
+    h3 {
+      @apply /* font-header */ text-5xl font-normal tracking-normal;
+    }
+    h4 {
+      @apply /* font-header */ text-4xl font-normal tracking-wider;
+    }
+    h5 {
+      @apply /* font-header */ text-2xl font-normal tracking-normal;
+    }
+    h6 {
+      @apply /* font-header */ text-xl font-medium tracking-wide;
+    }
+    .subtitle1 {
+      @apply /* font-header */ text-lg font-normal tracking-wide;
+    }
+    .subtitle2 {
+      @apply /* font-header */ text-sm font-medium tracking-wide;
+    }
+    .body1 {
+      @apply /* font-body */ text-sm font-normal tracking-widest;
+    }
+    .body2 {
+      @apply /* font-body */ text-xs font-normal tracking-wider;
+    }
+    .caption {
+      @apply /* font-body */ text-xs font-normal tracking-wide;
+    }
+    .overlined {
+      @apply /* font-body */ text-xs font-normal tracking-widest uppercase;
+    }
+  }
