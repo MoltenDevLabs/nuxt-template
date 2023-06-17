@@ -4,7 +4,8 @@ export default defineNuxtConfig({
   modules: [
     "@nuxtjs/tailwindcss", 
     "@pinia/nuxt", 
-    "@nuxtjs/google-fonts"
+    "@nuxtjs/google-fonts",
+    '@nuxtjs/supabase',
   ],
   app: {
     head: {

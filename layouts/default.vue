@@ -30,8 +30,4 @@
   </div>
 </template>
 
-<style scooped>
-.router-link-exact-active {
-  color: #12b488;
-}
-</style>
+<style scooped></style>

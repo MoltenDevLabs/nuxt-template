@@ -1,49 +1,46 @@
-*, ::before, ::after {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Lato", "Merriweather", sans-serif;
+*,
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Lato", "Merriweather", sans-serif;
 }
 
 body {
-  @apply font-body bg-gray-50;
+  @apply font-body;
 }
 
-@layer base {
-    h1 {
-      @apply display-large;
-    }
-    h2 {
-      @apply display-medium;
-    }
-    h3 {
-      @apply display-small;
-    }
-    h4 {
-      @apply headline-large;
-    }
-    h5 {
-      @apply headline-medium;
-    }
-    h6 {
-      @apply headline-small;
-    }
-    .subtitle1 {
-      @apply font-header text-lg font-normal tracking-wide;
-    }
-    .subtitle2 {
-      @apply font-header text-sm font-medium tracking-wide;
-    }
-    .body1 {
-      @apply font-body text-sm font-normal tracking-widest;
-    }
-    .body2 {
-      @apply font-body text-xs font-normal tracking-wider;
-    }
-    .caption {
-      @apply font-body text-xs font-normal tracking-wide;
-    }
-    .overlined {
-      @apply font-body text-xs font-normal tracking-widest uppercase;
-    }
+@layer components {
+  .btn {
+    @apply bg-primary-700 text-primary-200 px-3 py-2 rounded-md text-sm text-center;
   }
+  .card {
+    @apply p-3 rounded-md bg-white shadow-md h-full;
+  }
+  .router-link-exact-active {
+    @apply bg-tertiary-500;
+  }
+}
+
+
+@layer base {
+  h1 {
+    @apply display-large;
+  }
+  h2 {
+    @apply display-medium;
+  }
+  h3 {
+    @apply display-small;
+  }
+  h4 {
+    @apply headline-large;
+  }
+  h5 {
+    @apply headline-medium;
+  }
+  h6 {
+    @apply headline-small;
+  }
+}
