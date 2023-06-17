@@ -51,7 +51,10 @@ export default {
           950: "#0a2429",
         },
       },
-      fontFamily: {},
+      fontFamily: {
+        header: ["Lato", "sans-serif"], //Header, subtitle
+        body: ["Merriweather", "sans-serif"], //Body, button, caption, overline
+      },
     },
   },
   plugins: [],
