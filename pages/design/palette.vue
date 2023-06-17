@@ -1,8 +1,8 @@
 <template>
   <div class="flex gap-2">
-    <div class="flex flex-col border w-1/3 text-center">
+    <div class="flex flex-col border w-full sm:w-1/3 text-center">
       <div>
-        <h5 class="text-center border-b">Brand Color Scheme</h5>
+        <h4 class="text-center border-b">Brand Color Scheme</h4>
       </div>
       <div class="flex gap-2">
         <div>
@@ -47,9 +47,9 @@
       </div>
     </div>
 
-    <div class="flex flex-col border w-1/3 text-center">
+    <div class="flex flex-col border w-full sm:w-1/3 text-center">
       <div>
-        <h5 class="text-center border-b">Neutral Color Scheme</h5>
+        <h4 class="text-center border-b">Neutral Color Scheme</h4>
       </div>
       <div class="flex gap-2">
         <div>
@@ -120,9 +120,9 @@
       </div>
     </div>
 
-    <div class="flex flex-col border w-1/3 text-center">
+    <div class="flex flex-col border w-full sm:w-1/3 text-center">
       <div>
-        <h5 class="text-center border-b">Semantic Color Scheme</h5>
+        <h4 class="text-center border-b">Semantic Color Scheme</h4>
       </div>
       <div class="flex gap-2">
         <div>

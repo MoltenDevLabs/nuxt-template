@@ -1,2 +1,4 @@
 @import 'tailwind.css';
 @import 'base';
+@import 'typography.css';
+@import 'typography.tokens.css';
