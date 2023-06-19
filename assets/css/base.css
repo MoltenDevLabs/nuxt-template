@@ -40,7 +40,8 @@ body {
   h6 {
     @apply headline-small;
   }
-  .nuxt-icon svg{
-    @apply mb-0 w-28;
-  }
+}
+
+.router-link-exact-active {
+  @apply text-tertiary-500;
 }

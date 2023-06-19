@@ -2,12 +2,13 @@
   <div>
     <header class="shadow-sm bg-white">
       <nav class="container mx-auto p-4 flex items-center justify-between">
-        <nuxt-link to="/" class="font-bold">
-          <nuxt-icon name="logo" filled />
+        <nuxt-link to="/" class="">
+          <nuxt-icon name="logo-text-light" filled />
         </nuxt-link>
         <ul class="flex gap-4">
           <li><nuxt-link to="/">Home</nuxt-link></li>
           <li><nuxt-link to="/about">About</nuxt-link></li>
+          <li><nuxt-link to="/contact">Contact</nuxt-link></li>
           <li><nuxt-link to="/design" class="btn">Design</nuxt-link></li>
         </ul>
       </nav>
@@ -20,13 +21,16 @@
     <!-- Here ends the page content -->
 
     <footer class="">
-      <nav class="container mx-auto p-4 flex items-center justify-between border-t-2">
+      <nav
+        class="container mx-auto p-4 flex items-center justify-between border-t-2"
+      >
         <nuxt-link to="/" class="font-bold">
-          <nuxt-icon name="logo" filled />
+          <nuxt-icon name="logo-text-light" filled />
         </nuxt-link>
         <ul class="flex gap-4">
           <li><nuxt-link to="/">Home</nuxt-link></li>
           <li><nuxt-link to="/about">About</nuxt-link></li>
+          <li><nuxt-link to="/contact">Contact</nuxt-link></li>
           <li><nuxt-link to="/design" class="btn">Design</nuxt-link></li>
         </ul>
       </nav>
@@ -35,10 +39,10 @@
 </template>
 
 <style scooped>
-.router-link-exact-active {
-  @apply text-tertiary-500;
+.nuxt-icon svg{
+  font-size: 2em;
+  margin-bottom: 0;
+  object-fit: fill ;
+  width:fit-content;
 }
-.nuxt-icon svg {
-    @apply text-5xl text-center align-middle;
-  }
 </style>
