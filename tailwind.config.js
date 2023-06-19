@@ -1,6 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 export default {
   content: [
+    "./app.vue",
     "./index.html",
     "./src/**/*.{vue,js,ts,jsx,tsx}",
     "./components/**/*.vue",
