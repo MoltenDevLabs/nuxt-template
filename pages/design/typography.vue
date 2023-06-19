@@ -4,7 +4,7 @@
     <h2>Display-medium - H2</h2>
     <h3>Display-small - H3</h3>
     <hr />
-    <h4>Headline-large - h4</h4>
+    <h4>Headline-large - H4</h4>
     <h5>Headline-medium - H5</h5>
     <h6>Headline-small - H6</h6>
     <hr />
@@ -27,6 +27,8 @@
 definePageMeta({
   layout: "design",
 });
+
+const { title } = useRoute().params
 </script>
 
 <style scoped></style>
