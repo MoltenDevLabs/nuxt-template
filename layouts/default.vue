@@ -12,18 +12,16 @@
             <li><nuxt-link to="/contact">Contact</nuxt-link></li>
             <li><nuxt-link to="/design" class="btn">Design</nuxt-link></li>
           </ul>
-          <span>
-          <button
+          <button class="flex"
             @click="themeStore.toggleTheme()"
           >
             <i
               v-if="themeStore.isDarkTheme"
-              class="material-symbols-outlined"
+              class="material-icons-outlined"
               >light_mode</i
             >
-            <i v-else class="material-symbols-outlined">dark_mode</i>
+            <i v-else class="material-icons-outlined">dark_mode</i>
           </button>
-        </span>
         </div>
       </nav>
     </header>
@@ -55,27 +53,7 @@
 <script setup>
 import { useThemeStore } from '../stores/themeStore';
 
-
 const themeStore = useThemeStore();
-
-/* function toggleDarkMode(theme) {
-  useColorMode().preference = theme
-}
-
-if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-  document.documentElement.classList.add('dark')
-} else {
-  document.documentElement.classList.remove('dark')
-}
-
-// Whenever the user explicitly chooses light mode
-localStorage.theme = 'light'
-
-// Whenever the user explicitly chooses dark mode
-localStorage.theme = 'dark'
-
-// Whenever the user explicitly chooses to respect the OS preference
-localStorage.removeItem('theme') */
 </script>
 
 <style scooped>

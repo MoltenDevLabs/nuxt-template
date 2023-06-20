@@ -7,11 +7,6 @@
   font-family: "Lato", "Merriweather", sans-serif;
 }
 
-html {
-  @apply transition-colors ease-in duration-1000;
-  @apply bg-gradient-to-b bg-no-repeat w-screen;
-}
-
 body {
   @apply font-body;
 }
