@@ -1,16 +1,28 @@
 <template>
   <div>
-    <header class="shadow-sm bg-white">
+    <header class="shadow-sm bg-white dark:bg-stone-800">
       <nav class="container mx-auto p-4 flex items-center justify-between">
         <nuxt-link to="/" class="">
           <nuxt-icon name="logo-text-light" filled />
         </nuxt-link>
-        <ul class="flex gap-4">
-          <li><nuxt-link to="/">Home</nuxt-link></li>
-          <li><nuxt-link to="/about">About</nuxt-link></li>
-          <li><nuxt-link to="/contact">Contact</nuxt-link></li>
-          <li><nuxt-link to="/design" class="btn">Design</nuxt-link></li>
-        </ul>
+        <div class="flex gap-4 items-center">
+          <ul class="flex gap-4">
+            <li><nuxt-link to="/">Home</nuxt-link></li>
+            <li><nuxt-link to="/about">About</nuxt-link></li>
+            <li><nuxt-link to="/contact">Contact</nuxt-link></li>
+            <li><nuxt-link to="/design" class="btn">Design</nuxt-link></li>
+          </ul>
+          <button class="flex"
+            @click="themeStore.toggleTheme()"
+          >
+            <i
+              v-if="themeStore.isDarkTheme"
+              class="material-icons-outlined"
+              >light_mode</i
+            >
+            <i v-else class="material-icons-outlined">dark_mode</i>
+          </button>
+        </div>
       </nav>
     </header>
 
@@ -38,11 +50,17 @@
   </div>
 </template>
 
+<script setup>
+import { useThemeStore } from '../stores/themeStore';
+
+const themeStore = useThemeStore();
+</script>
+
 <style scooped>
-.nuxt-icon svg{
+.nuxt-icon svg {
   font-size: 2em;
   margin-bottom: 0;
-  object-fit: fill ;
-  width:fit-content;
+  object-fit: fill;
+  width: fit-content;
 }
 </style>
