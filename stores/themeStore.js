@@ -11,10 +11,14 @@ export const useThemeStore = defineStore("themeStore", () => {
   // Toggles the theme between 'light' and 'dark'
   function toggleTheme() {
     isDarkTheme.value = !isDarkTheme.value;
+    const rootElement = document.documentElement;
+    rootElement.classList.toggle('dark');
+    rootElement.classList.toggle('light');
+    console.log(rootElement.classList);
+/*     isDarkTheme.value = !isDarkTheme.value;
     const colorTheme = useColorMode();
     colorTheme.preference = isDarkTheme.value ? "dark" : "light";
-    localStorage.theme = colorTheme.preference;
-    console.log(colorTheme.preference);
+    localStorage.theme = colorTheme.preference; */
   }
 
   return {
