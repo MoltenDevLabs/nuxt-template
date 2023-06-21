@@ -2,3 +2,4 @@
 @import 'base';
 @import 'typography.css';
 @import 'typography.tokens.css';
+@import 'theme.tokens.css';

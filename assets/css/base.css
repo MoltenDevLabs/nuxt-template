@@ -8,37 +8,37 @@
 }
 
 body {
-  @apply font-body;
+  @apply font-body text-surface-900 bg-surface-100;
 }
 
 @layer components {
   .btn {
-    @apply bg-primary-700 text-primary-200 px-3 py-2 rounded-md text-sm text-center;
+    @apply bg-primary-700 text-primary-100 px-3 py-2 rounded-md text-sm text-center;
   }
   .card {
-    @apply p-3 rounded-md bg-white shadow-md h-full;
+    @apply p-3 rounded-md bg-secondary-50 shadow-md h-full;
   }
 }
 
 
 @layer base {
   h1 {
-    @apply display-large;
+    @apply display-large text-surface-900;
   }
   h2 {
-    @apply display-medium;
+    @apply display-medium text-surface-900;
   }
   h3 {
-    @apply display-small;
+    @apply display-small text-surface-900;
   }
   h4 {
-    @apply headline-large;
+    @apply headline-large text-surface-900;
   }
   h5 {
-    @apply headline-medium;
+    @apply headline-medium text-surface-900;
   }
   h6 {
-    @apply headline-small;
+    @apply headline-small text-surface-900;
   }
 }
 
