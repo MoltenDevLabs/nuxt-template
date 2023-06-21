@@ -3,7 +3,8 @@
     <header class="shadow-sm bg-secondary-50">
       <nav class="container mx-auto p-4 flex items-center justify-between">
         <nuxt-link to="/" class="">
-          <nuxt-icon name="logo-text-light" filled />
+          <nuxt-icon v-if="themeStore.isDarkTheme" name="logo-text-dark" filled />
+          <nuxt-icon v-else name="logo-text-light" filled />
         </nuxt-link>
         <div class="flex gap-4 items-center">
         <ul class="flex gap-4">
@@ -34,7 +35,8 @@
     <footer class="bg-secondary-50">
       <nav class="container mx-auto p-4 flex items-center justify-between border-t-2">
         <nuxt-link to="/" class="">
-          <nuxt-icon name="logo-text-light" filled />
+          <nuxt-icon v-if="themeStore.isDarkTheme" name="logo-text-dark" filled />
+          <nuxt-icon v-else name="logo-text-light" filled />
         </nuxt-link>
         <ul class="flex gap-4">
           <li><nuxt-link to="/design/palette">Palette</nuxt-link></li>
