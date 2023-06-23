@@ -1,6 +1,6 @@
 <template>
   <div class="container flex gap-2">
-    <div class="flex flex-col border w-full sm:w-1/3 text-center">
+    <div class="flex flex-col border w-full text-center">
       <div>
         <h5 class="text-center border-b">Brand Color Scheme</h5>
       </div>
@@ -60,7 +60,7 @@
       </div>
     </div>
 
-    <div class="flex flex-col border w-full sm:w-1/3 text-center">
+    <div class="flex flex-col border w-full text-center">
       <div>
         <h5 class="text-center border-b">Neutral Color Scheme</h5>
       </div>
@@ -133,7 +133,7 @@
       </div>
     </div>
 
-    <div class="flex flex-col border w-full sm:w-1/3 text-center">
+    <div class="flex flex-col border w-full text-center">
       <div>
         <h5 class="text-center border-b">Semantic Color Scheme</h5>
       </div>
