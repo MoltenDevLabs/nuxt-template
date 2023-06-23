@@ -9,12 +9,42 @@
 
 body {
   @apply font-body text-surface-900 bg-surface-100;
+  @apply transition-colors duration-500 ease-in-out;
 }
 
 @layer components {
   .btn {
-    @apply bg-primary-700 text-primary-100 px-3 py-2 rounded-md text-sm text-center;
+    @apply relative bg-primary-600 text-primary-100 brightness-100 overflow-hidden px-3 py-2 rounded-md label-large align-middle text-center cursor-pointer;
   }
+  .btn:hover {
+    @apply shadow shadow-stone-800/40 brightness-90;
+  }
+  .btn:focus {
+    @apply brightness-90;
+  }
+  .btn:active {
+    @apply shadow-none brightness-75;
+  }
+  .btn:disabled {
+    @apply bg-surface-300 text-surface-800 shadow-none opacity-50 cursor-default;
+  }
+
+  .btn-text {
+    @apply relative text-primary-600 brightness-100 overflow-hidden px-3 py-2 rounded-md label-large align-middle text-center cursor-pointer;
+  }
+  .btn-text:hover {
+    @apply shadow shadow-stone-800/40 brightness-90;
+  }
+  .btn-text:focus {
+    @apply brightness-90;
+  }
+  .btn-text:active {
+    @apply shadow-none brightness-75;
+  }
+  .btn-text:disabled {
+    @apply bg-surface-300 text-surface-800 shadow-none opacity-50 cursor-default;
+  }
+
   .card {
     @apply p-3 rounded-md bg-secondary-50 shadow-md h-full;
   }
