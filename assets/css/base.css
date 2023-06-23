@@ -33,7 +33,7 @@ body {
     @apply relative text-primary-600 brightness-100 overflow-hidden px-3 py-2 rounded-md label-large align-middle text-center cursor-pointer;
   }
   .btn-text:hover {
-    @apply shadow shadow-stone-800/40 brightness-90;
+    @apply shadow shadow-stone-800/40 brightness-90 outline outline-1 outline-offset-0 border-primary-600;
   }
   .btn-text:focus {
     @apply brightness-90;
@@ -42,7 +42,7 @@ body {
     @apply shadow-none brightness-75;
   }
   .btn-text:disabled {
-    @apply bg-surface-300 text-surface-800 shadow-none opacity-50 cursor-default;
+    @apply bg-surface-300 text-surface-800 shadow-none outline-0 opacity-50 cursor-default;
   }
 
   .card {
