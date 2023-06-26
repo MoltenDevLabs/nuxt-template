@@ -1,6 +1,9 @@
 <template>
   <div>
-    <div>
+    <div v-if="$device.isMobile">
+      <h1>hamburger menu here</h1>
+    </div>
+    <div v-else>
       <header class="shadow-sm mx-auto px-4 flex items-center justify-between">
         <nuxt-link to="/" class="">
           <nuxt-icon

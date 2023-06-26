@@ -23,7 +23,7 @@
 
 <script setup>
 definePageMeta({
-  layout: "design",
+  layout: "default",
 });
 
 const { title } = useRoute().params

@@ -11,6 +11,7 @@
   "devDependencies": {
     "@nuxt/devtools": "latest",
     "@nuxtjs/color-mode": "^3.2.0",
+    "@nuxtjs/device": "^3.1.0",
     "@nuxtjs/google-fonts": "^3.0.1",
     "@nuxtjs/supabase": "^0.3.7",
     "@nuxtjs/tailwindcss": "^6.7.2",
