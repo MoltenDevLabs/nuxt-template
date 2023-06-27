@@ -1,10 +1,43 @@
 <template>
   <div>
+    <header
+      v-if="navMenu"
+      class="absolute top-[72px] min-w-full z-10 overflow-hidden transition-all ease-out duration-500"
+      :class="navMenu ? 'max-h-[300px]' : 'max-h-0'"
+    >
+      <ul class="flex flex-col items-center p-0 duration-300 ease-out">
+        <li><nuxt-link to="/" @click="toggleMenu">Home</nuxt-link></li>
+        <li>
+          <nuxt-link to="/about" @click="toggleMenu">About</nuxt-link>
+        </li>
+        <li>
+          <nuxt-link to="/contact" @click="toggleMenu">Contact</nuxt-link>
+        </li>
+        <li>
+          <nuxt-link to="/design" @click="toggleMenu" class="btn"
+            >Design</nuxt-link
+          >
+        </li>
+      </ul>
+    </header>
+
     <div v-if="$device.isMobile">
-      <h1>hamburger menu here</h1>
+      <header class="mx-auto px-8 flex items-center justify-between">
+        <nuxt-link to="/" @click="navMenu = false">
+          <nuxt-icon name="logo" filled />
+        </nuxt-link>
+        <ul>
+          <button @click="toggleMenu" class="btn flex items-center p-1">
+            <i class="material-icons-outlined">{{
+              navMenu ? "close" : "menu"
+            }}</i>
+          </button>
+        </ul>
+      </header>
     </div>
+
     <div v-else>
-      <header class="shadow-sm mx-auto px-4 flex items-center justify-between">
+      <header class="mx-auto px-4 flex items-center justify-between">
         <nuxt-link to="/" class="">
           <nuxt-icon
             v-if="themeStore.isDarkTheme"
@@ -42,27 +75,60 @@
     </main>
     <!-- Here ends the page content -->
 
-    <footer class="mx-auto px-4 flex items-center justify-between border-t-2">
-      <nuxt-link to="/" class="font-bold">
-        <nuxt-icon v-if="themeStore.isDarkTheme" name="logo-text-dark" filled />
-        <nuxt-icon v-else name="logo-text-light" filled />
-      </nuxt-link>
-      <nav>
-        <ul class="flex gap-4">
-          <li><nuxt-link to="/">Home</nuxt-link></li>
-          <li><nuxt-link to="/about">About</nuxt-link></li>
-          <li><nuxt-link to="/contact">Contact</nuxt-link></li>
-          <li><nuxt-link to="/design" class="btn">Design</nuxt-link></li>
-        </ul>
-      </nav>
-    </footer>
+    <div v-if="$device.isMobile">
+      <footer
+        class="mx-auto px-4 flex flex-col items-center justify-between border-t-2"
+      >
+        <nuxt-link to="/" class="font-bold">
+          <nuxt-icon
+            v-if="themeStore.isDarkTheme"
+            name="logo-text-dark"
+            filled
+          />
+          <nuxt-icon v-else name="logo-text-light" filled />
+        </nuxt-link>
+        <nav>
+          <ul class="flex flex-col gap-4">
+            <li><nuxt-link to="/">Home</nuxt-link></li>
+            <li><nuxt-link to="/about">About</nuxt-link></li>
+            <li><nuxt-link to="/contact">Contact</nuxt-link></li>
+            <li><nuxt-link to="/design" class="btn">Design</nuxt-link></li>
+          </ul>
+        </nav>
+      </footer>
+    </div>
+
+    <div v-else>
+      <footer class="mx-auto px-4 flex items-center justify-between border-t-2">
+        <nuxt-link to="/" class="font-bold">
+          <nuxt-icon
+            v-if="themeStore.isDarkTheme"
+            name="logo-text-dark"
+            filled
+          />
+          <nuxt-icon v-else name="logo-text-light" filled />
+        </nuxt-link>
+        <nav>
+          <ul class="flex gap-4">
+            <li><nuxt-link to="/">Home</nuxt-link></li>
+            <li><nuxt-link to="/about">About</nuxt-link></li>
+            <li><nuxt-link to="/contact">Contact</nuxt-link></li>
+            <li><nuxt-link to="/design" class="btn">Design</nuxt-link></li>
+          </ul>
+        </nav>
+      </footer>
+    </div>
   </div>
 </template>
 
 <script setup>
 import { useThemeStore } from "../stores/themeStore";
-
 const themeStore = useThemeStore();
+
+const navMenu = ref(false);
+const toggleMenu = () => {
+  navMenu.value = !navMenu.value;
+};
 </script>
 
 <style scooped>

@@ -16,7 +16,12 @@ body {
 
 header,
 footer {
-  @apply min-w-full container bg-secondary-50 dark:bg-secondary-900 prose prose-stone dark:prose-invert prose-a:no-underline;
+  @apply min-w-full container shadow-sm bg-secondary-50 dark:bg-secondary-900 prose prose-stone dark:prose-invert prose-a:no-underline;
+}
+
+ul,
+li {
+  @apply p-0;
 }
 
 @layer components {
