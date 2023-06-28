@@ -63,5 +63,5 @@ li {
 }
 
 .router-link-exact-active {
-  @apply text-tertiary-500;
+  @apply text-tertiary-500 font-semibold;
 }
