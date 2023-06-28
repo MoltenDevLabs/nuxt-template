@@ -210,7 +210,7 @@
 
 <script setup>
 definePageMeta({
-  layout: 'design',
+  layout: 'default',
 });
 </script>
 

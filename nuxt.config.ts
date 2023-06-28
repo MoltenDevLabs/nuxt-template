@@ -8,6 +8,7 @@ export default defineNuxtConfig({
     "@nuxtjs/supabase",
     "nuxt-icons",
     "@nuxtjs/color-mode",
+    '@nuxtjs/device',
   ],
   app: {
     head: {
@@ -39,6 +40,9 @@ export default defineNuxtConfig({
     exposeConfig: false,
     injectPosition: 0,
     viewer: true,
+  },
+  device: {
+    refreshOnResize: true
   },
   css: ["@/assets/css/main.css"],
   postcss: {

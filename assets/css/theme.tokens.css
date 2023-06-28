@@ -48,7 +48,7 @@
     --color-surface-900: #1c1917;
     --color-surface-950: #0c0a09;
   }
-
+/* 
   :root.dark {
     --color-primary-950: #fdf3f3;
     --color-primary-900: #fbe6e5;
@@ -97,5 +97,5 @@
     --color-surface-200: #292524;
     --color-surface-100: #1c1917;
     --color-surface-50: #0c0a09;
-  }
+  } */
 }
