@@ -121,7 +121,7 @@
             <ul>
               <h6 class="font-bold text-xs lg:text-sm mb-2">Check my work</h6>
               <li class="text-xs lg:text-sm">
-                <nuxt-link to="/contact">Contact</nuxt-link>
+                <nuxt-link to="/contact" @click="scrollToTop">Contact</nuxt-link>
               </li>
               <li class="text-xs lg:text-sm">
                 <nuxt-link to="https://github.com/MoltenDevLabs"
@@ -141,10 +141,10 @@
           <nav>
             <ul>
               <h6 class="font-bold text-xs lg:text-sm mb-2">More links</h6>
-              <li class="text-xs lg:text-sm"><nuxt-link to="/">Home</nuxt-link></li>
-              <li class="text-xs lg:text-sm"><nuxt-link to="/about">About</nuxt-link></li>
+              <li class="text-xs lg:text-sm"><nuxt-link to="/" @click="scrollToTop">Home</nuxt-link></li>
+              <li class="text-xs lg:text-sm"><nuxt-link to="/about" @click="scrollToTop">About</nuxt-link></li>
               <li class="text-xs lg:text-sm">
-                <nuxt-link to="/contact">Contact</nuxt-link>
+                <nuxt-link to="/contact" @click="scrollToTop">Contact</nuxt-link>
               </li>
             </ul>
           </nav>
@@ -154,7 +154,7 @@
             <ul>
               <h6 class="font-bold text-xs lg:text-sm mb-2">Other Links</h6>
               <li class="text-xs lg:text-sm">
-                <nuxt-link to="/contact">Contact</nuxt-link>
+                <nuxt-link to="/contact" @click="scrollToTop">Contact</nuxt-link>
               </li>
             </ul>
           </nav>
@@ -164,13 +164,13 @@
             <ul>
               <h6 class="font-bold text-xs lg:text-sm mb-2">Design links</h6>
               <li class="text-xs lg:text-sm">
-                <nuxt-link to="/design">Design</nuxt-link>
+                <nuxt-link to="/design" @click="scrollToTop">Design</nuxt-link>
               </li>
               <li class="text-xs lg:text-sm">
-                <nuxt-link to="/design/palette">Palette</nuxt-link>
+                <nuxt-link to="/design/palette" @click="scrollToTop">Palette</nuxt-link>
               </li>
               <li class="text-xs lg:text-sm">
-                <nuxt-link to="/design/typography">Typography</nuxt-link>
+                <nuxt-link to="/design/typography" @click="scrollToTop">Typography</nuxt-link>
               </li>
             </ul>
           </nav>
