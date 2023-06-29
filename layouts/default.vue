@@ -21,7 +21,7 @@
       </header>
       <header
         class="absolute top-[72px] min-w-full h-0 z-10 overflow-hidden transition-all ease-out duration-500"
-        :class="navMenu ? 'h-56 opacity-90' : 'h-0'"
+        :class="navMenu ? 'h-72 opacity-90' : 'h-0'"
       >
         <ul class="flex flex-col items-center p-0">
           <button
@@ -73,10 +73,8 @@
             <li><nuxt-link to="/contact">Contact</nuxt-link></li>
             <li><nuxt-link to="/design">Design</nuxt-link></li>
             <li>
-            <nuxt-link to="/auth" @click="toggleMenu" class="btn"
-              >Log in</nuxt-link
-            >
-          </li>
+              <nuxt-link to="/auth" class="btn">Log in</nuxt-link>
+            </li>
           </ul>
           <button class="flex" @click="themeStore.toggleTheme()">
             <i
