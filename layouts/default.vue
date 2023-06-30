@@ -21,7 +21,7 @@
       </header>
       <header
         class="absolute top-[72px] min-w-full h-0 z-10 overflow-hidden transition-all ease-out duration-500"
-        :class="navMenu ? 'h-72 opacity-90' : 'h-0'"
+        :class="navMenu ? 'h-96 opacity-90' : 'h-0'"
       >
         <ul class="flex flex-col items-center p-0">
           <button
@@ -47,7 +47,12 @@
           <li>
             <nuxt-link to="/design" @click="scrollToTop()">Design</nuxt-link>
           </li>
-          <li>
+          <li v-if="user">
+            <nuxt-link to="/profile" @click="scrollToTop()" class="btn"
+              >Profile</nuxt-link
+            >
+          </li>
+          <li v-else>
             <nuxt-link to="/auth" @click="scrollToTop()" class="btn"
               >Log in</nuxt-link
             >
@@ -68,12 +73,27 @@
         </nuxt-link>
         <nav class="flex gap-4 items-center">
           <ul class="flex gap-4">
-            <li><nuxt-link to="/">Home</nuxt-link></li>
-            <li><nuxt-link to="/about">About</nuxt-link></li>
-            <li><nuxt-link to="/contact">Contact</nuxt-link></li>
-            <li><nuxt-link to="/design">Design</nuxt-link></li>
+            <li><nuxt-link to="/" @click="scrollToTop()">Home</nuxt-link></li>
             <li>
-              <nuxt-link to="/auth" class="btn">Log in</nuxt-link>
+              <nuxt-link to="/about" @click="scrollToTop()">About</nuxt-link>
+            </li>
+            <li>
+              <nuxt-link to="/contact" @click="scrollToTop()"
+                >Contact</nuxt-link
+              >
+            </li>
+            <li>
+              <nuxt-link to="/design" @click="scrollToTop()">Design</nuxt-link>
+            </li>
+            <li v-if="user">
+              <nuxt-link to="/profile" @click="scrollToTop()" class="btn"
+                >Profile</nuxt-link
+              >
+            </li>
+            <li v-else>
+              <nuxt-link to="/auth" @click="scrollToTop()" class="btn"
+                >Log in</nuxt-link
+              >
             </li>
           </ul>
           <button class="flex" @click="themeStore.toggleTheme()">
@@ -223,6 +243,18 @@
             </ul>
           </nav>
         </div>
+        <div class="">
+          <nav>
+            <ul>
+              <h6 class="font-bold text-xs lg:text-sm mb-2">User Links</h6>
+              <li class="text-xs lg:text-sm">
+                <nuxt-link to="/profile" @click="scrollToTop()"
+                  >Profile</nuxt-link
+                >
+              </li>
+            </ul>
+          </nav>
+        </div>
       </footer>
     </div>
     <!-- FOOTER END -->
@@ -232,6 +264,7 @@
 <script setup>
 import { useThemeStore } from "../stores/themeStore";
 const themeStore = useThemeStore();
+const user = useSupabaseUser();
 
 const navMenu = ref(false);
 const openMenu = () => {
