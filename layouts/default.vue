@@ -3,7 +3,7 @@
     <!-- HEADER START -->
     <div v-if="$device.isMobileOrTablet">
       <header class="mx-auto px-8 flex items-center justify-between">
-        <nuxt-link to="/" @click="navMenu = false">
+        <nuxt-link to="/" @click="scrollToTop()">
           <nuxt-icon
             v-if="themeStore.isDarkTheme"
             name="logo-text-dark"
@@ -12,7 +12,7 @@
           <nuxt-icon v-else name="logo-text-light" filled />
         </nuxt-link>
         <ul>
-          <button @click="toggleMenu" class="btn flex items-center p-1">
+          <button @click="openMenu()" class="btn flex items-center p-1">
             <i class="material-icons-outlined">{{
               navMenu ? "close" : "menu"
             }}</i>
@@ -37,18 +37,18 @@
               >dark_mode</i
             >
           </button>
-          <li><nuxt-link to="/" @click="toggleMenu">Home</nuxt-link></li>
+          <li><nuxt-link to="/" @click="scrollToTop()">Home</nuxt-link></li>
           <li>
-            <nuxt-link to="/about" @click="toggleMenu">About</nuxt-link>
+            <nuxt-link to="/about" @click="scrollToTop()">About</nuxt-link>
           </li>
           <li>
-            <nuxt-link to="/contact" @click="toggleMenu">Contact</nuxt-link>
+            <nuxt-link to="/contact" @click="scrollToTop()">Contact</nuxt-link>
           </li>
           <li>
-            <nuxt-link to="/design" @click="toggleMenu">Design</nuxt-link>
+            <nuxt-link to="/design" @click="scrollToTop()">Design</nuxt-link>
           </li>
           <li>
-            <nuxt-link to="/auth" @click="toggleMenu" class="btn"
+            <nuxt-link to="/auth" @click="scrollToTop()" class="btn"
               >Log in</nuxt-link
             >
           </li>
@@ -106,7 +106,7 @@
         class="mx-auto p-6 sm:py-8 sm:px-16 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 auto-cols-auto gap-2 justify-between border-t-2"
       >
         <div class="col-span-full">
-          <nuxt-link to="/" @click="scrollToTop">
+          <nuxt-link to="/" @click="scrollToTop()">
             <nuxt-icon
               v-if="themeStore.isDarkTheme"
               name="logo-text-dark"
@@ -127,7 +127,7 @@
             <ul>
               <h6 class="font-bold text-xs lg:text-sm mb-2">Check my work</h6>
               <li class="text-xs lg:text-sm">
-                <nuxt-link to="/contact" @click="scrollToTop"
+                <nuxt-link to="/contact" @click="scrollToTop()"
                   >Contact</nuxt-link
                 >
               </li>
@@ -148,16 +148,39 @@
         <div class="">
           <nav>
             <ul>
-              <h6 class="font-bold text-xs lg:text-sm mb-2">More links</h6>
+              <h6 class="font-bold text-xs lg:text-sm mb-2">Web map</h6>
               <li class="text-xs lg:text-sm">
-                <nuxt-link to="/" @click="scrollToTop">Home</nuxt-link>
+                <nuxt-link to="/" @click="scrollToTop()">Home</nuxt-link>
               </li>
               <li class="text-xs lg:text-sm">
-                <nuxt-link to="/about" @click="scrollToTop">About</nuxt-link>
+                <nuxt-link to="/about" @click="scrollToTop()">About</nuxt-link>
               </li>
               <li class="text-xs lg:text-sm">
-                <nuxt-link to="/contact" @click="scrollToTop"
+                <nuxt-link to="/contact" @click="scrollToTop()"
                   >Contact</nuxt-link
+                >
+              </li>
+              <li class="text-xs lg:text-sm">
+                <nuxt-link to="/design" @click="scrollToTop()"
+                  >Design</nuxt-link
+                >
+              </li>
+              <li class="text-xs lg:text-sm">
+                <nuxt-link to="/design/palette" @click="scrollToTop()"
+                  >Palette</nuxt-link
+                >
+              </li>
+              <li class="text-xs lg:text-sm">
+                <nuxt-link to="/design/typography" @click="scrollToTop()"
+                  >Typography</nuxt-link
+                >
+              </li>
+              <li class="text-xs lg:text-sm">
+                <nuxt-link to="/auth" @click="scrollToTop()">Log in</nuxt-link>
+              </li>
+              <li class="text-xs lg:text-sm">
+                <nuxt-link to="/auth/signup" @click="scrollToTop()"
+                  >Sign up</nuxt-link
                 >
               </li>
             </ul>
@@ -166,10 +189,13 @@
         <div class="">
           <nav>
             <ul>
-              <h6 class="font-bold text-xs lg:text-sm mb-2">Other Links</h6>
+              <h6 class="font-bold text-xs lg:text-sm mb-2">Auth Links</h6>
               <li class="text-xs lg:text-sm">
-                <nuxt-link to="/contact" @click="scrollToTop"
-                  >Contact</nuxt-link
+                <nuxt-link to="/auth" @click="scrollToTop()">Log in</nuxt-link>
+              </li>
+              <li class="text-xs lg:text-sm">
+                <nuxt-link to="/auth/signup" @click="scrollToTop()"
+                  >Sign up</nuxt-link
                 >
               </li>
             </ul>
@@ -180,15 +206,17 @@
             <ul>
               <h6 class="font-bold text-xs lg:text-sm mb-2">Design links</h6>
               <li class="text-xs lg:text-sm">
-                <nuxt-link to="/design" @click="scrollToTop">Design</nuxt-link>
+                <nuxt-link to="/design" @click="scrollToTop()"
+                  >Design</nuxt-link
+                >
               </li>
               <li class="text-xs lg:text-sm">
-                <nuxt-link to="/design/palette" @click="scrollToTop"
+                <nuxt-link to="/design/palette" @click="scrollToTop()"
                   >Palette</nuxt-link
                 >
               </li>
               <li class="text-xs lg:text-sm">
-                <nuxt-link to="/design/typography" @click="scrollToTop"
+                <nuxt-link to="/design/typography" @click="scrollToTop()"
                   >Typography</nuxt-link
                 >
               </li>
@@ -206,7 +234,7 @@ import { useThemeStore } from "../stores/themeStore";
 const themeStore = useThemeStore();
 
 const navMenu = ref(false);
-const toggleMenu = () => {
+const openMenu = () => {
   navMenu.value = !navMenu.value;
 };
 
@@ -215,6 +243,7 @@ const scrollToTop = () => {
     top: 0,
     behavior: "smooth",
   });
+  navMenu.value = false;
 };
 </script>
 
