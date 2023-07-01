@@ -42,11 +42,14 @@ export const useUserStore = defineStore("userStore", () => {
     }
   }
 
+  /*   async function editProfile() {} */
+
   return {
     signIn,
     signUp,
     signOut,
     rememberMe,
+    /*     editProfile, */
     user,
     remember,
   };

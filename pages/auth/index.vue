@@ -86,7 +86,7 @@ const handleSignIn = async () => {
     loading.value = true;
     await userStore.signIn(userData);
     await userStore.rememberMe();
-    router.push("/profile");
+    router.push("/");
     email.value = "";
     password.value = "";
   } catch (error) {

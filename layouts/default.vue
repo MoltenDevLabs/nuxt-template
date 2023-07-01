@@ -2,7 +2,7 @@
   <div>
     <!-- HEADER START -->
     <div v-if="$device.isMobileOrTablet">
-      <header class="mx-auto px-8 flex items-center justify-between">
+      <header class="mx-auto px-[10%] flex items-center justify-between">
         <nuxt-link to="/" @click="scrollToTop()">
           <nuxt-icon
             v-if="themeStore.isDarkTheme"
@@ -62,7 +62,7 @@
     </div>
 
     <div v-else>
-      <header class="mx-auto px-16 flex items-center justify-between">
+      <header class="mx-auto px-[10%] flex items-center justify-between">
         <nuxt-link to="/" class="">
           <nuxt-icon
             v-if="themeStore.isDarkTheme"
@@ -113,7 +113,7 @@
 
     <!-- CONTENT START -->
     <main
-      class="prose prose-stone dark:prose-invert md:prose-lg lg:prose-xl container mx-auto max-w-fit p-8 my-4"
+      class="prose prose-stone dark:prose-invert md:prose-lg lg:prose-xl container mx-auto px-[10%] my-4"
       :class="navMenu ? 'opacity-50 blur-sm' : ''"
     >
       <slot />
@@ -123,7 +123,7 @@
     <!-- FOOTER START -->
     <div>
       <footer
-        class="mx-auto p-6 sm:py-8 sm:px-16 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 auto-cols-auto gap-2 justify-between border-t-2"
+        class="mx-auto px-[10%] py-[6%] grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 auto-cols-auto gap-2 justify-between border-t-2"
       >
         <div class="col-span-full">
           <nuxt-link to="/" @click="scrollToTop()">
