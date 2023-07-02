@@ -22,27 +22,6 @@
   </div>
 </template>
 
-<script setup>
-import { useUserStore } from "@/stores/userStore";
-const userStore = useUserStore();
-const user = useSupabaseUser();
-
-const loading = ref(false);
-
-const handleSignOut = async () => {
-  try {
-    loading.value = true;
-    await userStore.signOut();
-  } catch (error) {
-    console.error(error);
-  } finally {
-    loading.value = false;
-  }
-};
-
-/* watchEffect(() => {
-  if (user.value) router.push("/");
-}); */
-</script>
+<script setup></script>
 
 <style></style>

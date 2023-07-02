@@ -61,15 +61,12 @@ export const useUserStore = defineStore("userStore", () => {
           }
         }
         await fetchUserUsername();
-      } else {
-        // Pre-fill the input field with the existing username
-        editedUsername.value = usernameRef.value;
       }
     } catch (error) {
       console.error(error);
     } finally {
       editing.value = !editing.value;
-      editedUsername.value = "";
+      editedUsername.value = usernameRef.value;
     }
   }
 

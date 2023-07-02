@@ -8,15 +8,31 @@
 }
 
 body {
-  @apply text-surface-900 bg-surface-50 dark:bg-surface-900
-  prose prose-stone prose-headings:dark:text-surface-200 dark:prose-invert prose-li:list-none prose-a:no-underline
-  container min-w-full;
-  @apply transition-colors duration-500 ease-in-out;
+  @apply container 
+    min-w-full 
+    text-surface-900
+    bg-surface-50 
+    dark:bg-surface-900 
+    prose prose-stone 
+    prose-headings:dark:text-surface-200 
+    dark:prose-invert 
+    prose-li:list-none 
+    prose-a:no-underline 
+    transition-colors 
+    duration-500 
+    ease-in-out;
 }
 
 header,
 footer {
-  @apply min-w-full container shadow-sm bg-secondary-50 dark:bg-secondary-900 prose prose-stone dark:prose-invert prose-a:no-underline;
+  @apply container
+  min-w-full  
+  shadow-sm 
+  bg-secondary-50 
+  dark:bg-secondary-900 
+  prose prose-stone 
+  dark:prose-invert 
+  prose-a:no-underline;
 }
 
 ul,
@@ -26,42 +42,77 @@ li {
 
 @layer components {
   .btn {
-    @apply relative bg-primary-600 dark:bg-primary-500 text-primary-100 brightness-100 overflow-hidden px-3 py-2 rounded-lg align-middle text-center cursor-pointer whitespace-nowrap transition-colors duration-500 ease-in-out;
+    @apply relative 
+      text-primary-100 bg-primary-600 
+      dark:bg-primary-500 
+      brightness-100 
+      overflow-hidden 
+      px-3 py-2 
+      rounded-lg 
+      align-middle text-center 
+      cursor-pointer whitespace-nowrap 
+      transition-colors duration-500 ease-in-out;
   }
   .btn:hover {
-    @apply shadow shadow-stone-800/40 brightness-90;
+    @apply brightness-90
+      shadow shadow-stone-800/40;
   }
   .btn:focus {
     @apply brightness-90;
   }
   .btn:active {
-    @apply shadow-none brightness-75;
+    @apply brightness-75
+      shadow-none;
   }
   .btn:disabled {
-    @apply bg-surface-300 text-surface-800 shadow-none opacity-50 cursor-default;
+    @apply opacity-50 
+      text-surface-800 bg-surface-300 
+      shadow-none 
+      cursor-default;
   }
 
   .btn-text {
-    @apply relative text-primary-600 dark:text-surface-300 brightness-100 overflow-hidden px-3 py-2 rounded-lg align-middle text-center cursor-pointer whitespace-nowrap transition-colors duration-500 ease-in-out;
+    @apply relative 
+      text-primary-600 
+      dark:text-surface-300 
+      brightness-100 
+      overflow-hidden 
+      px-3 py-2 
+      rounded-lg 
+      align-middle text-center 
+      cursor-pointer whitespace-nowrap 
+      transition-colors duration-500 ease-in-out;
   }
   .btn-text:hover {
-    @apply shadow shadow-stone-800/40 brightness-90 outline outline-1 outline-offset-0 border-primary-600;
+    @apply brightness-90
+      shadow shadow-stone-800/40 
+      outline outline-1 outline-offset-0 
+      border-primary-600;
   }
   .btn-text:focus {
     @apply brightness-90;
   }
   .btn-text:active {
-    @apply shadow-none brightness-75;
+    @apply brightness-75
+      shadow-none;
   }
   .btn-text:disabled {
-    @apply bg-surface-300 text-surface-800 shadow-none outline-0 opacity-50 cursor-default;
+    @apply opacity-50
+      text-surface-800 bg-surface-300 
+      shadow-none outline-0 
+      cursor-default;
   }
 
   .inp {
-    @apply py-1 px-2 w-full rounded-lg outline outline-surface-900 outline-1 outline-offset-0 bg-surface-50 dark:bg-surface-300 dark:text-surface-900;
+    @apply py-1 px-2 w-full
+      bg-surface-50 
+      dark:text-surface-900 dark:bg-surface-300
+      rounded-lg 
+      outline outline-surface-900 outline-1 outline-offset-0;
   }
   .inp:hover {
-    @apply brightness-95 border-primary-600;
+    @apply brightness-95 
+      border-primary-600;
   }
   .inp:focus {
     @apply brightness-90;
@@ -70,24 +121,30 @@ li {
     @apply brightness-90;
   }
   .inp:disabled {
-    @apply bg-surface-300 text-surface-800 opacity-50 cursor-default;
+    @apply opacity-50
+      text-surface-800 bg-surface-300 
+      cursor-default;
   }
-
   .inp-succes {
     @apply outline-green-500;
   }
-
   .inp-error {
     @apply outline-red-500;
   }
 
   .card {
-    @apply p-2 rounded-md bg-secondary-50 dark:bg-secondary-900 shadow-md;
+    @apply p-2 rounded-md 
+      bg-secondary-50 dark:bg-secondary-900 
+      shadow-md;
   }
 }
 
-.router-link-exact-active {
-  @apply text-tertiary-500 font-semibold transition-colors duration-500 ease-in-out;
+a {
+  @apply dark:text-surface-200;
+}
+a.router-link-exact-active {
+  @apply text-tertiary-500 font-semibold 
+    transition-colors duration-500 ease-in-out;
 }
 
 /* Page Transition */

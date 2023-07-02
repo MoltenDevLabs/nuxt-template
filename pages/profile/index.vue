@@ -27,13 +27,14 @@
         <div
           class="absolute inset-0 flex items-center justify-center rounded-full"
         >
-          <i
+          <!-- The function "changeProfilePicture()" isn't done -->
+          <!--           <i
             v-if="userStore.editing"
             class="btn-text text-surface-300 dark:text-surface-900 outline-none shadow-none p-1 material-icons-outlined bg-surface-900 dark:dark:bg-surface-300"
             @click="changeProfilePicture()"
           >
             edit
-          </i>
+          </i> -->
         </div>
       </div>
       <div class="flex flex-col align-bottom justify-end">
@@ -60,23 +61,6 @@ const user = useSupabaseUser();
 onBeforeMount(() => {
   userStore.fetchUserUsername();
 });
-
-/* const editing = ref(false);
-const editedUsername = ref("");
-const username = ref("Username"); */
-
-/* const editProfile = () => {
-  if (editing.value) {
-    if (editedUsername.value.length > 0) {
-      username.value = editedUsername.value;
-    }
-    // Perform any necessary actions (e.g., update the user profile on the server)
-    editedUsername.value = "";
-  } else {
-    editedUsername.value = username.value;
-  }
-  editing.value = !editing.value;
-}; */
 
 definePageMeta({
   middleware: "auth",
