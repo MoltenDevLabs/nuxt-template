@@ -1,12 +1,5 @@
 <template>
   <div>
-    <div v-if="user" class="flex justify-between">
-      <p>Logged in</p>
-      <button class="btn" @click="handleSignOut">Log out</button>
-    </div>
-    <div v-else>
-      <p>Logged out</p>
-    </div>
     <h1>Home View</h1>
     <p>
       Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quas natus
@@ -29,31 +22,6 @@
   </div>
 </template>
 
-<script setup>
-import { useUserStore } from "@/stores/userStore";
-const userStore = useUserStore();
-const user = useSupabaseUser();
-
-const loading = ref(false);
-
-const handleSignOut = async () => {
-  try {
-    loading.value = true;
-    await userStore.signOut();
-  } catch (error) {
-    console.error(error);
-  } finally {
-    loading.value = false;
-  }
-};
-
-/* watchEffect(() => {
-  if (user.value) router.push("/");
-}); */
-
-/* definePageMeta({
-  middleware: 'auth'
-}); */
-</script>
+<script setup></script>
 
 <style></style>

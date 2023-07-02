@@ -1,21 +1,19 @@
 <template>
   <div>
     <div class="card p-8">
-      <div v-if="loading">
-        <h2 class="m-0 text-center">
-          <span
-            class="material-icons-outlined animate-pulse relative align-text-top"
+      <div v-if="loading" class="flex justify-center items-baseline">
+        <h2 class="m-0">
+          <span class="material-icons-outlined animate-pulse relative"
             >volcano</span
           >
           Login
-          <span
-            class="material-icons-outlined animate-pulse relative align-text-top"
+          <span class="material-icons-outlined animate-pulse relative"
             >volcano</span
           >
         </h2>
       </div>
-      <div v-else>
-        <h2 class="m-0 text-center">Login</h2>
+      <div v-else class="flex justify-center items-baseline">
+        <h2 class="m-0">Login</h2>
       </div>
       <form @submit.prevent="handleSignIn()" class="py-4">
         <div class="py-2">

@@ -115,7 +115,6 @@ const validateFormSignUp = () => {
   if (!emailRegex.test(email.value)) {
     inpEmailError.value = true;
   }
-
   /* Regex for 8 characters long and contain at least one lowercase letter, one uppercase letter, one number, and one symbol (!@#$%^&*()) */
   const passwordRegex =
     /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()])[a-zA-Z\d!@#$%^&*()]{8,}$/;
