@@ -49,12 +49,12 @@
           >
             <i
               v-if="themeStore.isDarkTheme"
-              class="material-icons-outlined text-surface-900 dark:text-surface-200 border border-1 rounded-full p-1"
+              class="material-icons-outlined text-surface-900 dark:text-surface-200 border border-1 rounded-full p-1 scale-75"
               >light_mode</i
             >
             <i
               v-else
-              class="material-icons-outlined text-surface-900 dark:text-surface-200 border border-1 border-surface-900 rounded-full p-1"
+              class="material-icons-outlined text-surface-900 dark:text-surface-200 border border-1 border-surface-900 rounded-full p-1 scale-75"
               >dark_mode</i
             >
           </button>
@@ -120,10 +120,12 @@
           <button class="flex" @click="themeStore.toggleTheme()">
             <i
               v-if="themeStore.isDarkTheme"
-              class="material-icons-outlined text-surface-900"
+              class="material-icons-outlined text-surface-900 dark:text-surface-200 border border-1 rounded-full p-1 scale-90"
               >light_mode</i
             >
-            <i v-else class="material-icons-outlined text-surface-900"
+            <i
+              v-else
+              class="material-icons-outlined text-surface-900 dark:text-surface-200 border border-1 border-surface-900 rounded-full p-1 scale-90"
               >dark_mode</i
             >
           </button>
