@@ -1,8 +1,8 @@
 <template>
-  <div class="card text-center">
-    <img :src="imageSrc" alt="Some Image" class="w-full h-auto object-cover"/>
+  <div class="card text-center transition-all duration-500 hover:scale-105">
+    <img :src="imageSrc" alt="Some Image" />
     <nuxt-link :to="`/design/${title}`">
-      <button class="btn mb-4 mt-auto">View {{ title }}</button>
+      <button class="btn mb-4">View {{ title }}</button>
     </nuxt-link>
   </div>
 </template>

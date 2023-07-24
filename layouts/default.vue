@@ -5,7 +5,7 @@
       <header class="mx-auto px-[10%] flex items-center justify-between">
         <nuxt-link to="/" @click="scrollToTop()">
           <nuxt-icon
-            v-if="themeStore.isDarkTheme"
+            v-if="themeStore.isDarkTheme !== null"
             name="logo-text-dark"
             filled
           />
@@ -42,13 +42,13 @@
         class="absolute top-[68px] min-w-full h-0 z-10 overflow-hidden transition-all ease-out duration-500"
         :class="navMenu ? 'h-80 opacity-90' : 'h-0'"
       >
-        <ul class="flex flex-col items-center p-0">
+        <ul class="flex flex-col items-center p-0 uppercase tracking-widest">
           <button
             class="absolute top-3 mx-[10%] flex place-self-end"
             @click="themeStore.toggleTheme()"
           >
             <i
-              v-if="themeStore.isDarkTheme"
+              v-if="themeStore.isDarkTheme !== null"
               class="material-icons-outlined text-surface-900 dark:text-surface-200 border border-1 rounded-full p-1 scale-75"
               >light_mode</i
             >
@@ -58,24 +58,24 @@
               >dark_mode</i
             >
           </button>
-          <li><nuxt-link to="/" @click="scrollToTop()">Home</nuxt-link></li>
+          <li><nuxt-link to="/" @click="scrollToTop()">HOME</nuxt-link></li>
           <li>
-            <nuxt-link to="/about" @click="scrollToTop()">About</nuxt-link>
+            <nuxt-link to="/about" @click="scrollToTop()">ABOUT</nuxt-link>
           </li>
           <li>
-            <nuxt-link to="/contact" @click="scrollToTop()">Contact</nuxt-link>
+            <nuxt-link to="/contact" @click="scrollToTop()">CONTACT</nuxt-link>
           </li>
           <li>
-            <nuxt-link to="/design" @click="scrollToTop()">Design</nuxt-link>
+            <nuxt-link to="/design" @click="scrollToTop()">DESIGN</nuxt-link>
           </li>
           <li v-if="user">
             <nuxt-link to="/profile" @click="scrollToTop()" class="btn"
-              >Profile</nuxt-link
+              >PROFILE</nuxt-link
             >
           </li>
           <li v-else>
             <nuxt-link to="/auth" @click="scrollToTop()" class="btn"
-              >Log in</nuxt-link
+              >LOG IN</nuxt-link
             >
           </li>
         </ul>
@@ -83,79 +83,89 @@
     </div>
 
     <div v-else>
-      <header class="mx-auto px-[10%] flex items-center justify-between">
+      <header
+        class="header mx-auto px-[10%] py-[2%] flex items-center justify-between"
+      >
         <nuxt-link to="/" class="">
           <nuxt-icon
-            v-if="themeStore.isDarkTheme"
-            name="logo-text-dark"
+            v-if="themeStore.isDarkTheme !== null"
+            :name="
+              themeStore.isDarkTheme ? 'logo-text-dark' : 'logo-text-light'
+            "
+            title="Home"
             filled
           />
-          <nuxt-icon v-else name="logo-text-light" filled />
         </nuxt-link>
         <nav class="flex gap-4 items-center">
-          <ul class="flex gap-4">
-            <li><nuxt-link to="/" @click="scrollToTop()">Home</nuxt-link></li>
+          <ul class="flex gap-12 text-lg uppercase tracking-widest my-4">
+            <li><nuxt-link to="/" @click="scrollToTop()">HOME</nuxt-link></li>
             <li>
-              <nuxt-link to="/about" @click="scrollToTop()">About</nuxt-link>
+              <nuxt-link to="/about" @click="scrollToTop()">ABOUT</nuxt-link>
             </li>
             <li>
               <nuxt-link to="/contact" @click="scrollToTop()"
-                >Contact</nuxt-link
+                >CONTACT</nuxt-link
               >
             </li>
             <li>
-              <nuxt-link to="/design" @click="scrollToTop()">Design</nuxt-link>
+              <nuxt-link to="/design" @click="scrollToTop()">DESIGN</nuxt-link>
             </li>
+          </ul>
+        </nav>
+        <nav class="flex items-center">
+          <button class="flex" @click="themeStore.toggleTheme()">
+            <i
+              v-if="themeStore.isDarkTheme"
+              class="material-icons-outlined text-surface-900 dark:text-surface-200 border border-1 rounded-full p-1 mx-8 scale-90"
+              title="Light mode"
+              >light_mode</i
+            >
+            <i
+              v-else
+              class="material-icons-outlined text-surface-900 dark:text-surface-200 border border-1 rounded-full p-1 mx-8 scale-90 border-surface-900"
+              title="Dark mode"
+              >dark_mode</i
+            >
+          </button>
+          <ul>
             <li v-if="user">
               <nuxt-link to="/profile" @click="scrollToTop()" class="btn"
-                >Profile</nuxt-link
+                >PROFILE</nuxt-link
               >
             </li>
+
             <li v-else>
               <nuxt-link to="/auth" @click="scrollToTop()" class="btn"
                 >Log in</nuxt-link
               >
             </li>
           </ul>
-          <button class="flex" @click="themeStore.toggleTheme()">
-            <i
-              v-if="themeStore.isDarkTheme"
-              class="material-icons-outlined text-surface-900 dark:text-surface-200 border border-1 rounded-full p-1 scale-90"
-              >light_mode</i
-            >
-            <i
-              v-else
-              class="material-icons-outlined text-surface-900 dark:text-surface-200 border border-1 border-surface-900 rounded-full p-1 scale-90"
-              >dark_mode</i
-            >
-          </button>
         </nav>
       </header>
     </div>
     <!-- HEADER END -->
 
     <!-- CONTENT START -->
-    <main
-      class="prose prose-stone dark:prose-invert md:prose-lg lg:prose-xl container mx-auto px-[10%] my-4"
-      :class="navMenu ? ' blur-sm' : ''"
-    >
+    <main :class="navMenu ? ' blur-sm' : ''">
       <slot />
     </main>
     <!-- CONTENT END -->
 
     <!-- FOOTER START -->
-    <div>
+    <div class="mt-12">
       <footer
-        class="mx-auto px-[10%] py-[6%] grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 auto-cols-auto gap-2 justify-between border-t-2"
+        class="mx-auto px-[10%] py-[6%] grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 auto-cols-auto gap-2 justify-between border-t-2 border-surface-600 dark:border-surface-300"
       >
         <div class="col-span-full">
           <nuxt-link to="/" @click="scrollToTop()">
             <nuxt-icon
-              v-if="themeStore.isDarkTheme"
-              name="logo-text-dark"
+              v-if="themeStore.isDarkTheme !== null"
+              :name="
+                themeStore.isDarkTheme ? 'logo-text-dark' : 'logo-text-light'
+              "
+              title="Home"
               filled
             />
-            <nuxt-icon v-else name="logo-text-light" filled />
           </nuxt-link>
           <p class="text-xs lg:text-sm mb-0">
             Made with
@@ -186,16 +196,6 @@
                 >
               </li>
               <li class="text-xs lg:text-sm">
-                <nuxt-link to="/design/palette" @click="scrollToTop()"
-                  >Palette</nuxt-link
-                >
-              </li>
-              <li class="text-xs lg:text-sm">
-                <nuxt-link to="/design/typography" @click="scrollToTop()"
-                  >Typography</nuxt-link
-                >
-              </li>
-              <li class="text-xs lg:text-sm">
                 <nuxt-link to="/auth" @click="scrollToTop()">Log in</nuxt-link>
               </li>
               <li class="text-xs lg:text-sm">
@@ -220,17 +220,6 @@
                   >Contact</nuxt-link
                 >
               </li>
-              <li class="text-xs lg:text-sm">
-                <nuxt-link to="https://github.com/MoltenDevLabs"
-                  >Github</nuxt-link
-                >
-              </li>
-              <li class="text-xs lg:text-sm">
-                <nuxt-link
-                  to="https://www.linkedin.com/in/pol-cadavid-rojas-09572366/"
-                  >LinkedIn</nuxt-link
-                >
-              </li>
             </ul>
           </nav>
         </div>
@@ -244,28 +233,6 @@
               <li class="text-xs lg:text-sm">
                 <nuxt-link to="/auth/signup" @click="scrollToTop()"
                   >Sign up</nuxt-link
-                >
-              </li>
-            </ul>
-          </nav>
-        </div>
-        <div class="">
-          <nav>
-            <ul>
-              <h6 class="font-bold text-xs lg:text-sm mb-2">Design links</h6>
-              <li class="text-xs lg:text-sm">
-                <nuxt-link to="/design" @click="scrollToTop()"
-                  >Design</nuxt-link
-                >
-              </li>
-              <li class="text-xs lg:text-sm">
-                <nuxt-link to="/design/palette" @click="scrollToTop()"
-                  >Palette</nuxt-link
-                >
-              </li>
-              <li class="text-xs lg:text-sm">
-                <nuxt-link to="/design/typography" @click="scrollToTop()"
-                  >Typography</nuxt-link
                 >
               </li>
             </ul>

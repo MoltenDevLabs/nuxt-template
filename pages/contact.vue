@@ -2,7 +2,7 @@
   <div>
     <div>
       <h1>Contact View</h1>
-      <h5>Check my social media</h5>
+      <h4>Check my social media</h4>
     </div>
     <div class="m-6">
       <ul class="flex gap-4">

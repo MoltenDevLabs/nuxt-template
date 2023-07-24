@@ -4,6 +4,7 @@
       <button
         @click="userStore.editProfile()"
         class="btn material-icons-outlined mx-2 p-1"
+        :title="userStore.editing ? 'Save' : 'Edit'"
       >
         {{ userStore.editing ? "save" : "edit" }}
       </button>
@@ -11,6 +12,7 @@
         to="/"
         @click="userStore.signOut()"
         class="btn material-icons-outlined no-underline p-1"
+        title="Log out"
         v-bind:exact="true"
       >
         logout
@@ -58,7 +60,7 @@ import { useUserStore } from "@/stores/userStore";
 const userStore = useUserStore();
 const user = useSupabaseUser();
 
-onBeforeMount(() => {
+onMounted(() => {
   userStore.fetchUserUsername();
 });
 

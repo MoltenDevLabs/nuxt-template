@@ -45,25 +45,30 @@ export const useUserStore = defineStore("userStore", () => {
 
   const editing = ref(false);
   const editedUsername = ref("");
-  const usernameRef = ref(null);
+  const usernameRef = ref("");
 
   async function editProfile() {
+    /*     if (!user.value) {
+      console.error("User is not defined");
+      return;
+    } */
     try {
       if (editing.value) {
         if (editedUsername.value.length > 0) {
+          console.log(user.value.id, editedUsername.value);
           const { data, error } = await supabase
-            .from("userProfile")
+            .from("profile")
             .update({ username: editedUsername.value })
-            .eq("id", 1)
+            .eq("id", user.value.id)
             .select();
           if (data && data.length > 0) {
             usernameRef.value = data[0].username;
           }
+          await fetchUserUsername();
         }
-        await fetchUserUsername();
       }
     } catch (error) {
-      console.error(error);
+      console.error("Error updating username: ", error);
     } finally {
       editing.value = !editing.value;
       editedUsername.value = usernameRef.value;
@@ -71,17 +76,23 @@ export const useUserStore = defineStore("userStore", () => {
   }
 
   async function fetchUserUsername() {
+    /*     if (!user.value) {
+      console.error("User is not defined");
+      return;
+    } */
     try {
       const { data, error } = await supabase
-        .from("userProfile")
+        .from("profile")
         .select("username")
-        .eq("id", 1)
+        .eq("id", user.value.id)
         .limit(1);
+      console.log(data, error);
+      console.log(user.value.id);
       if (data && data.length > 0) {
         usernameRef.value = data[0].username;
       } else {
         // Set a default username
-        usernameRef.value = "Username";
+        usernameRef.value = "defaultUsername";
       }
     } catch (error) {
       console.error(error);
