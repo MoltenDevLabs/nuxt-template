@@ -208,10 +208,6 @@
   </div>
 </template>
 
-<script setup>
-definePageMeta({
-  layout: 'design',
-});
-</script>
+<script setup></script>
 
 <style></style>

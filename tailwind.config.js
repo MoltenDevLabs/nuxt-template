@@ -66,10 +66,10 @@ module.exports = {
         },
       },
       fontFamily: {
-        header: ["Lato", "sans-serif"], //Header, subtitle
-        body: ["Merriweather", "sans-serif"], //Body, button, caption, overline
+        header: ["Lato", "sans-serif"],
+        body: ["Merriweather", "sans-serif"],
       },
     },
   },
-  plugins: [],
+  plugins: [require("@tailwindcss/typography")],
 };

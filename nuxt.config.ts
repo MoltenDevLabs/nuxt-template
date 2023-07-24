@@ -8,18 +8,47 @@ export default defineNuxtConfig({
     "@nuxtjs/supabase",
     "nuxt-icons",
     "@nuxtjs/color-mode",
+    "@nuxtjs/device",
   ],
   app: {
     head: {
       title: "Nuxt template",
-      meta: [{ name: "description", content: "Template using nuxt3" }],
+      meta: [
+        {
+          name: "Nuxt template",
+          content:
+            "Nuxt, tailwind, google fonts, supabase, nuxt icons, color mode, device",
+          charset: "UTF-8",
+        },
+      ],
       link: [
         {
           rel: "stylesheet",
           href: "https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp",
         },
+        {
+          rel: "preconnect",
+          href: "https://fonts.gstatic.com/",
+          crossorigin: "anonymous",
+        },
       ],
     },
+    pageTransition: { name: "page", mode: "out-in" },
+    layoutTransition: { name: "layout", mode: "out-in" },
+  },
+  googleFonts: {
+    families: {
+      Lato: {
+        wght: [100, 200, 300, 400, 500, 600, 700, 800, 900],
+        ital: [100, 200, 300, 400, 500, 600, 700, 800, 900],
+      },
+      Merriweather: {
+        wght: [100, 200, 300, 400, 500, 600, 700, 800, 900],
+        ital: [100, 200, 300, 400, 500, 600, 700, 800, 900],
+      },
+    },
+    display: "swap", // 'auto' | 'block' | 'swap' | 'fallback' | 'optional'
+    preconnect: true,
   },
   pinia: {
     autoImports: [
@@ -31,7 +60,7 @@ export default defineNuxtConfig({
   colorMode: {
     classSuffix: "",
     preference: "system",
-    fallback: "dark",
+    fallback: "light",
   },
   tailwindcss: {
     cssPath: "@/assets/css/tailwind.css",
@@ -39,6 +68,9 @@ export default defineNuxtConfig({
     exposeConfig: false,
     injectPosition: 0,
     viewer: true,
+  },
+  device: {
+    refreshOnResize: true,
   },
   css: ["@/assets/css/main.css"],
   postcss: {
