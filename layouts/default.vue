@@ -152,7 +152,7 @@
     <!-- CONTENT END -->
 
     <!-- FOOTER START -->
-    <div class="mt-12">
+    <div>
       <footer
         class="mx-auto px-[10%] py-[6%] grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 auto-cols-auto gap-2 justify-between border-t-2 border-surface-600 dark:border-surface-300"
       >
