@@ -61,7 +61,7 @@ const userStore = useUserStore();
 const user = useSupabaseUser();
 
 onMounted(() => {
-  userStore.fetchUserUsername();
+  userStore.fetchUser();
 });
 
 definePageMeta({
