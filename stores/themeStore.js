@@ -1,5 +1,6 @@
 export const useThemeStore = defineStore("themeStore", () => {
-  const isDarkTheme = ref(null);
+  const isDarkTheme = ref(true);
+  const previousTheme = ref(false);
 
   // Fetches the system default theme
   onBeforeMount(async () => {
@@ -18,8 +19,22 @@ export const useThemeStore = defineStore("themeStore", () => {
     rootElement.classList.toggle("light", !isDarkTheme.value);
   }
 
+  function setPreviousTheme() {
+    previousTheme.value = isDarkTheme.value;
+  }
+
+  function toggleAndSetPreviousTheme() {
+    setPreviousTheme(isDarkTheme.value);
+    if (!isDarkTheme.value) {
+      toggleTheme();
+    }
+  }
+
   return {
     isDarkTheme,
+    previousTheme,
     toggleTheme,
+    setPreviousTheme,
+    toggleAndSetPreviousTheme,
   };
 });

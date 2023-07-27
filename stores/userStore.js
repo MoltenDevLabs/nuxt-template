@@ -1,6 +1,6 @@
 export const useUserStore = defineStore("userStore", () => {
   const supabase = useSupabaseClient();
-  const user = ref(undefined);
+  const user = useSupabaseUser();
 
   async function signIn({ email, password }) {
     const { data, error } = await supabase.auth.signInWithPassword({

@@ -1,108 +1,107 @@
 <template>
-  <div class="relative" :class="showModal ? 'bg-modal' : ''">
-    <div class="card p-8 mt-4 mx-[4%] sm:mx-[12%] md:mx-[20%] lg:mx-[26%]">
-      <div v-if="loading" class="flex justify-center items-baseline">
-        <h2 class="section-title my-4">
-          <span class="material-icons-outlined animate-pulse relative"
-            >cake</span
-          >
-          SIGN UP
-          <span class="material-icons-outlined animate-pulse relative"
-            >cake</span
-          >
-        </h2>
-      </div>
-      <div v-else class="flex justify-center items-baseline">
-        <h2 class="section-title my-4">SIGN UP</h2>
-      </div>
-      <form @submit.prevent="validateFormSignUp()" class="py-4">
-        <div class="py-2">
-          <label for="email" class="text-sm">Email</label>
-          <input
-            class="inp"
-            :class="inpEmailError ? 'inp-error' : ''"
-            type="text"
-            v-model="email"
-            placeholder="moltendev@labs.com"
-            autocomplete="current-email"
-          />
-          <p
-            v-if="inpEmailError"
-            class="text-xs text-red-500 dark:text-red-400 my-2"
-          >
-            Invalid email
-          </p>
-        </div>
-        <div class="py-4">
-          <label for="password" class="text-sm">Password</label>
-          <div class="flex relative">
-            <i
-              @click="toggleVisibility()"
-              class="absolute material-icons-outlined top-1/2 transform -translate-y-1/2 z-10 cursor-pointer right-2 text-surface-900"
+  <div class="relative w-full h-full overflow-hidden z-20">
+    <circles-background-animation></circles-background-animation>
+    <div
+      class="grid place-items-stretch h-fit relative z-10"
+      :class="showModal ? 'bg-modal' : ''"
+    >
+      <div class="auth-card">
+        <div v-if="loading" class="flex justify-center items-baseline">
+          <h2 class="section-title m-2">
+            <span class="material-icons-outlined animate-pulse relative"
+              >volcano</span
             >
-              {{ isVisible ? "visibility_off" : "visibility" }}
-            </i>
-            <input
-              class="inp"
-              :class="inpPasswordError ? 'inp-error' : ''"
-              :type="isVisible ? 'text' : 'password'"
-              v-model="password"
-              placeholder="password"
-              autocomplete="current-password"
-            />
-          </div>
-          <p
-            v-if="inpPasswordError"
-            class="text-xs text-red-500 dark:text-red-400 my-2"
-          >
-            Password must be 8 characters or more, contain at least one
-            lowercase letter, one uppercase letter, one number, and one symbol
-            (!@#$%^&*())
-          </p>
-        </div>
-        <div class="py-4">
-          <label for="passwordTwo" class="text-sm">Confirm password</label>
-          <div class="flex relative">
-            <i
-              @click="toggleVisibility()"
-              class="absolute material-icons-outlined top-1/2 transform -translate-y-1/2 z-10 cursor-pointer right-2 text-surface-900"
+            SIGN UP
+            <span class="material-icons-outlined animate-pulse relative"
+              >volcano</span
             >
-              {{ isVisible ? "visibility_off" : "visibility" }}
-            </i>
+          </h2>
+        </div>
+        <div v-else class="flex justify-center items-baseline">
+          <h2 class="section-title m-2">SIGN UP</h2>
+        </div>
+        <form @submit.prevent="validateFormSignUp()" class="py-4">
+          <div class="py-2">
+            <label for="email" class="text-sm">Email</label>
             <input
+              id="email"
               class="inp"
-              :class="inpPasswordTwoError ? 'inp-error' : ''"
-              :type="isVisible ? 'text' : 'password'"
-              v-model="passwordTwo"
-              placeholder="confirm password"
-              autocomplete="current-password"
+              :class="inpEmailError ? 'inp-error' : ''"
+              type="text"
+              v-model="email"
+              placeholder="moltendev@labs.com"
+              autocomplete="current-email"
             />
+            <p v-if="inpEmailError" class="inp-error-text">Invalid email</p>
           </div>
-          <p
-            v-if="inpPasswordTwoError"
-            class="text-xs text-red-500 dark:text-red-400 my-2"
-          >
-            Passwords must be equal
-          </p>
+          <div class="py-4">
+            <label for="password" class="text-sm">Password</label>
+            <div class="flex relative">
+              <i
+                @click="toggleVisibility()"
+                class="absolute material-icons-outlined top-1/2 transform -translate-y-1/2 z-10 cursor-pointer right-2 text-surface-900"
+              >
+                {{ isVisible ? "visibility_off" : "visibility" }}
+              </i>
+              <input
+                id="password"
+                class="inp"
+                :class="inpPasswordError ? 'inp-error-field' : ''"
+                :type="isVisible ? 'text' : 'password'"
+                v-model="password"
+                placeholder="password"
+                autocomplete="current-password"
+              />
+            </div>
+            <p v-if="inpPasswordError" class="inp-error-text">
+              Password must be 8 characters or more, contain at least one
+              lowercase letter, one uppercase letter, one number, and one symbol
+              (!@#$%^&*())
+            </p>
+          </div>
+          <div class="py-4">
+            <label for="passwordTwo" class="text-sm">Confirm password</label>
+            <div class="flex relative">
+              <i
+                @click="toggleVisibility()"
+                class="absolute material-icons-outlined top-1/2 transform -translate-y-1/2 z-10 cursor-pointer right-2 text-surface-900"
+              >
+                {{ isVisible ? "visibility_off" : "visibility" }}
+              </i>
+              <input
+                id="passwordTwo"
+                class="inp"
+                :class="inpPasswordTwoError ? 'inp-error-field' : ''"
+                :type="isVisible ? 'text' : 'password'"
+                v-model="passwordTwo"
+                placeholder="confirm password"
+                autocomplete="current-password"
+              />
+            </div>
+            <p v-if="inpPasswordTwoError" class="inp-error-text">
+              Passwords must be equal
+            </p>
+          </div>
+          <div class="py-4">
+            <input
+              id="rememeber"
+              class="accent-tertiary-500"
+              checked
+              type="checkbox"
+              v-model="remember"
+            />
+            <label for="remember" class="px-2 text-sm">Remember me</label>
+          </div>
+          <div class="py-2 w-full text-right">
+            <button class="btn w-full" type="submit">SIGN IN</button>
+          </div>
+        </form>
+        <div class="flex flex-col items-center justify-center pt-2">
+          <p class="m-0 text-center text-sm">Have an account?</p>
+          <nuxt-link to="/auth">
+            <button class="btn-text">Log in</button>
+          </nuxt-link>
         </div>
-        <div class="py-4">
-          <input
-            class="accent-tertiary-500"
-            checked
-            type="checkbox"
-            v-model="remember"
-          />
-          <label for="remember" class="px-2">Remember me</label>
-        </div>
-        <div class="py-2 w-full text-right">
-          <button class="btn w-full" type="submit">SIGN IN</button>
-        </div>
-      </form>
-      <div class="flex flex-col items-center justify-center py-2">
-        <p class="m-0 text-center">Have an account?</p>
-        <nuxt-link to="/auth">
-          <button class="btn-text">Log in</button>
-        </nuxt-link>
       </div>
     </div>
     <div v-if="showModal" class="modal">
@@ -115,8 +114,32 @@
 
 <script setup>
 import { useUserStore } from "@/stores/userStore";
+import { useThemeStore } from "@/stores/themeStore";
 const userStore = useUserStore();
+const themeStore = useThemeStore();
 const router = useRouter();
+
+definePageMeta({
+  layout: "auth",
+});
+
+onMounted(() => {
+  themeStore.toggleAndSetPreviousTheme();
+  setTimeout(() => {
+    const middlePosition =
+      document.body.scrollHeight / 2 - window.innerHeight / 2;
+    window.scrollTo({ top: middlePosition, behavior: "smooth" });
+  }, 1000);
+});
+
+onBeforeUnmount(() => {
+  if (themeStore.previousTheme !== null) {
+    themeStore.isDarkTheme = themeStore.previousTheme;
+    const rootElement = document.documentElement;
+    rootElement.classList.toggle("dark", themeStore.isDarkTheme);
+    rootElement.classList.toggle("light", !themeStore.isDarkTheme);
+  }
+});
 
 const inpEmailError = ref(false);
 const inpPasswordError = ref(false);
@@ -124,6 +147,7 @@ const inpPasswordTwoError = ref(false);
 const email = ref("");
 const password = ref("");
 const passwordTwo = ref("");
+
 const validateFormSignUp = () => {
   inpEmailError.value = false;
   inpPasswordError.value = false;
@@ -162,10 +186,9 @@ const handleSignUp = async () => {
     loading.value = true;
     await userStore.signUp(userData);
     await userStore.rememberMe();
-    router.push("/");
-    showModal.value = true;
     email.value = "";
     password.value = "";
+    showModal.value = true;
   } catch (error) {
     console.error(error);
   } finally {
@@ -181,7 +204,8 @@ const toggleVisibility = () => {
 const showModal = ref(false);
 const closeModal = () => {
   showModal.value = false;
+  router.push("/");
 };
 </script>
 
-<style></style>
+<style scooped></style>

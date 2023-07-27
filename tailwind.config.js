@@ -70,6 +70,9 @@ module.exports = {
         body: ["Merriweather", "sans-serif"],
       },
     },
+    backgroundImage: {
+      texture: `url('assets/images/volcanic-rock-texture-1.jpg')`,
+    },
   },
   plugins: [require("@tailwindcss/typography")],
 };
