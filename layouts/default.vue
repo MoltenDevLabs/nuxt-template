@@ -5,15 +5,15 @@
       <header class="mx-auto px-[10%] flex items-center justify-between">
         <nuxt-link to="/" @click="scrollToTop()">
           <nuxt-icon
-            v-if="themeStore.isDarkTheme !== null"
-            name="logo-text-dark"
+            :name="
+              themeStore.isDarkTheme ? 'logo-text-white' : 'logo-text-black'
+            "
             filled
           />
-          <nuxt-icon v-else name="logo-text-light" filled />
         </nuxt-link>
         <ul>
           <button
-            class="btn p-1 border border-1 border-surface-900 dark:border-surface-200 flex flex-col justify-center items-center group"
+            class="btn p-1 border border-surface-900 dark:border-surface-200 flex flex-col justify-center items-center group"
             @click="openMenu()"
           >
             <div
@@ -48,15 +48,12 @@
             @click="themeStore.toggleTheme()"
           >
             <i
-              v-if="themeStore.isDarkTheme !== null"
-              class="material-icons-outlined text-surface-900 dark:text-surface-200 border border-1 rounded-full p-1 scale-75"
-              >light_mode</i
+              class="material-icons-outlined text-surface-900 dark:text-surface-200 border rounded-full p-1 scale-75"
+              :class="{ 'border-surface-900': !themeStore.isDarkTheme }"
+              :title="themeStore.isDarkTheme ? 'Light mode' : 'Dark mode'"
             >
-            <i
-              v-else
-              class="material-icons-outlined text-surface-900 dark:text-surface-200 border border-1 border-surface-900 rounded-full p-1 scale-75"
-              >dark_mode</i
-            >
+              {{ themeStore.isDarkTheme ? "light_mode" : "dark_mode" }}
+            </i>
           </button>
           <li><nuxt-link to="/" @click="scrollToTop()">HOME</nuxt-link></li>
           <li>
@@ -68,15 +65,14 @@
           <li>
             <nuxt-link to="/design" @click="scrollToTop()">DESIGN</nuxt-link>
           </li>
-          <li v-if="user">
-            <nuxt-link to="/profile" @click="scrollToTop()" class="btn"
-              >PROFILE</nuxt-link
+          <li>
+            <nuxt-link
+              :to="user ? '/profile' : '/auth'"
+              @click="scrollToTop()"
+              class="btn"
             >
-          </li>
-          <li v-else>
-            <nuxt-link to="/auth" @click="scrollToTop()" class="btn"
-              >LOG IN</nuxt-link
-            >
+              {{ user ? "PROFILE" : "LOG IN" }}
+            </nuxt-link>
           </li>
         </ul>
       </header>
@@ -88,9 +84,8 @@
       >
         <nuxt-link to="/" class="">
           <nuxt-icon
-            v-if="themeStore.isDarkTheme !== null"
             :name="
-              themeStore.isDarkTheme ? 'logo-text-dark' : 'logo-text-light'
+              themeStore.isDarkTheme ? 'logo-text-white' : 'logo-text-black'
             "
             title="Home"
             filled
@@ -115,29 +110,22 @@
         <nav class="flex items-center">
           <button class="flex" @click="themeStore.toggleTheme()">
             <i
-              v-if="themeStore.isDarkTheme"
-              class="material-icons-outlined text-surface-900 dark:text-surface-200 border border-1 rounded-full p-1 mx-8 scale-90"
-              title="Light mode"
-              >light_mode</i
+              class="material-icons-outlined text-surface-900 dark:text-surface-200 border rounded-full p-1 mx-8 scale-90"
+              :class="{ 'border-surface-900': !themeStore.isDarkTheme }"
+              :title="themeStore.isDarkTheme ? 'Light mode' : 'Dark mode'"
             >
-            <i
-              v-else
-              class="material-icons-outlined text-surface-900 dark:text-surface-200 border border-1 rounded-full p-1 mx-8 scale-90 border-surface-900"
-              title="Dark mode"
-              >dark_mode</i
-            >
+              {{ themeStore.isDarkTheme ? "light_mode" : "dark_mode" }}
+            </i>
           </button>
           <ul>
-            <li v-if="user">
-              <nuxt-link to="/profile" @click="scrollToTop()" class="btn"
-                >PROFILE</nuxt-link
+            <li>
+              <nuxt-link
+                :to="user ? '/profile' : '/auth'"
+                @click="scrollToTop()"
+                class="btn"
               >
-            </li>
-
-            <li v-else>
-              <nuxt-link to="/auth" @click="scrollToTop()" class="btn"
-                >Log in</nuxt-link
-              >
+                {{ user ? "PROFILE" : "LOG IN" }}
+              </nuxt-link>
             </li>
           </ul>
         </nav>
@@ -146,7 +134,7 @@
     <!-- HEADER END -->
 
     <!-- CONTENT START -->
-    <main :class="navMenu ? ' blur-sm' : ''">
+    <main :class="navMenu ? 'blur-sm' : ''">
       <slot />
     </main>
     <!-- CONTENT END -->
@@ -159,9 +147,8 @@
         <div class="col-span-full">
           <nuxt-link to="/" @click="scrollToTop()">
             <nuxt-icon
-              v-if="themeStore.isDarkTheme !== null"
               :name="
-                themeStore.isDarkTheme ? 'logo-text-dark' : 'logo-text-light'
+                themeStore.isDarkTheme ? 'logo-text-white' : 'logo-text-black'
               "
               title="Home"
               filled
@@ -260,7 +247,7 @@
 const hamburgerMenuLine =
   "h-0.5 w-5 my-0.5 rounded-full bg-surface-900 dark:bg-surface-200 transition ease transform duration-500";
 
-import { useThemeStore } from "../stores/themeStore";
+import { useThemeStore } from "@/stores/themeStore";
 const themeStore = useThemeStore();
 const user = useSupabaseUser();
 
