@@ -3,18 +3,20 @@
     <circles-background-animation></circles-background-animation>
     <div class="grid place-items-stretch h-fit relative z-10">
       <div class="auth-card">
-        <div v-if="loading" class="flex justify-center items-baseline">
+        <div v-if="loading" class="flex justify-center">
           <h2 class="section-title m-2">
-            <span class="material-icons-outlined animate-pulse relative"
+            <span
+              class="material-icons-outlined animate-pulse relative mx-2 pt-1 align-top"
               >volcano</span
             >
             LOG IN
-            <span class="material-icons-outlined animate-pulse relative"
+            <span
+              class="material-icons-outlined animate-pulse relative mx-2 pt-1 align-top"
               >volcano</span
             >
           </h2>
         </div>
-        <div v-else class="flex justify-center items-baseline">
+        <div v-else class="flex justify-center">
           <h2 class="section-title m-2">LOG IN</h2>
         </div>
         <form @submit.prevent="handleSignIn()" class="py-4">

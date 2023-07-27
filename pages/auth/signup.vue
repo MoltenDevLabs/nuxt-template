@@ -6,18 +6,20 @@
       :class="showModal ? 'bg-modal' : ''"
     >
       <div class="auth-card">
-        <div v-if="loading" class="flex justify-center items-baseline">
+        <div v-if="loading" class="flex justify-center">
           <h2 class="section-title m-2">
-            <span class="material-icons-outlined animate-pulse relative"
+            <span
+              class="material-icons-outlined animate-pulse relative mx-2 pt-1 align-top"
               >volcano</span
             >
             SIGN UP
-            <span class="material-icons-outlined animate-pulse relative"
+            <span
+              class="material-icons-outlined animate-pulse relative mx-2 pt-1 align-top"
               >volcano</span
             >
           </h2>
         </div>
-        <div v-else class="flex justify-center items-baseline">
+        <div v-else class="flex justify-center">
           <h2 class="section-title m-2">SIGN UP</h2>
         </div>
         <form @submit.prevent="validateFormSignUp()" class="py-4">
