@@ -18,6 +18,13 @@
 
 <script setup>
 useFadeInEffect();
+
+onMounted(() => {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth",
+  });
+});
 </script>
 
 <style></style>

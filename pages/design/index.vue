@@ -14,10 +14,7 @@
 
 <script setup>
 const titles = ["palette", "typography"];
-const imageSrc = [
-  "https://1.bp.blogspot.com/-wI758Dzexuw/YKRh08eq0pI/AAAAAAAATvg/mZGjN5O0FHQMMPiq7mDtTf_6MIoO8qM_gCLcBGAsYHQ/s1600/Heading.png",
-  "https://public-images.interaction-design.org/literature/articles/materials/Z4EpUjD0LItZTM5hP2Xv7z85zDZbaLtCljyrGpia.jpg",
-];
+const imageSrc = ["assets/images/palette.png", "assets/images/typography.webp"];
 </script>
 
 <style></style>

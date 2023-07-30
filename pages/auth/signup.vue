@@ -22,6 +22,16 @@
         <div v-else class="flex justify-center">
           <h2 class="section-title m-2">SIGN UP</h2>
         </div>
+        <div>
+          <nuxt-link
+            to="/"
+            class="material-icons-outlined absolute top-2 left-3 sm:top-4 sm:left-5"
+            title="Home"
+            ><button class="btn-text rounded-full scale-125 w-8 h-8 p-0">
+              arrow_back
+            </button></nuxt-link
+          >
+        </div>
         <form @submit.prevent="validateFormSignUp()" class="py-4">
           <div class="py-2">
             <label for="email" class="text-sm">Email</label>
@@ -106,11 +116,13 @@
         </div>
       </div>
     </div>
-    <div v-if="showModal" class="modal">
-      <h1>Thanks for joining!</h1>
-      <p>Check your email to confirm your registration</p>
-      <button @click="closeModal()" class="btn">Ok</button>
-    </div>
+    <transition name="pop">
+      <div v-if="showModal" class="modal">
+        <h1>Thanks for joining!</h1>
+        <p>Check your email to confirm your registration</p>
+        <button @click="closeModal()" class="btn">Ok</button>
+      </div>
+    </transition>
   </div>
 </template>
 

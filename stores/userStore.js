@@ -52,12 +52,9 @@ export const useUserStore = defineStore("userStore", () => {
 
   async function editProfile() {
     editing.value = !editing.value;
-    console.log("editProfile works 1");
-    console.log(editing.value);
     try {
       if (editing.value) {
         if (editedUsername.value.length > 0) {
-          console.log("editProfile works 2");
           const { data, error } = await supabase
             .from("profile")
             .update({ username: editedUsername.value })
@@ -73,41 +70,8 @@ export const useUserStore = defineStore("userStore", () => {
     } catch (error) {
       console.error("Error updating username: ", error);
     } finally {
-      console.log("editProfile works 3");
       editedUsername.value = usernameRef.value;
     }
-  }
-
-  function generateRandomUsername() {
-    const firstWords = [
-      "Igneous",
-      "Lava",
-      "Liquid",
-      "Rock",
-      "Volcano",
-      "Magma",
-      "Crater",
-      "Acid",
-      "Eruption",
-      "Fire",
-    ];
-    const secondWords = [
-      "Basalt",
-      "Pumice",
-      "Dacite",
-      "Andesite",
-      "Rhyolite",
-      "Obsidian",
-      "Diorite",
-      "Olivine",
-      "Quartz",
-      "Granite",
-    ];
-    const firstWord = firstWords[Math.floor(Math.random() * firstWords.length)];
-    const secondWord =
-      secondWords[Math.floor(Math.random() * secondWords.length)];
-
-    return `${firstWord} ${secondWord}`;
   }
 
   async function fetchUser() {
@@ -126,7 +90,7 @@ export const useUserStore = defineStore("userStore", () => {
       if (data && data.length > 0 && data[0].username) {
         usernameRef.value = data[0].username;
       } else {
-        usernameRef.value = generateRandomUsername();
+        usernameRef.value = "Username";
       }
     } catch (error) {
       console.error("Error fetching user and username:", error);

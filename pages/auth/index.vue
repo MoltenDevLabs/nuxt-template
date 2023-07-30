@@ -19,6 +19,16 @@
         <div v-else class="flex justify-center">
           <h2 class="section-title m-2">LOG IN</h2>
         </div>
+        <div>
+          <nuxt-link
+            to="/"
+            class="material-icons-outlined absolute top-2 left-3 sm:top-4 sm:left-5"
+            title="Home"
+            ><button class="btn-text rounded-full scale-125 w-8 h-8 p-0">
+              arrow_back
+            </button></nuxt-link
+          >
+        </div>
         <form @submit.prevent="handleSignIn()" class="py-4">
           <div class="py-2">
             <label for="email" class="text-sm">Email</label>
