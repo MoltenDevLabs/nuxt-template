@@ -9,6 +9,6 @@ Make sure to install the dependencies:
 npm install
 
 #.env
-Create a .env with Supabase info:
+Create a .env file with Supabase info:
 SUPABASE_URL= "https://someUrl.supabase.co"
 SUPABASE_KEY= "someKey"
