@@ -13,7 +13,7 @@
     "@nuxtjs/color-mode": "^3.3.0",
     "@nuxtjs/device": "^3.1.0",
     "@nuxtjs/google-fonts": "^3.0.2",
-    "@nuxtjs/supabase": "^0.3.8",
+    "@nuxtjs/supabase": "^1.0.2",
     "@nuxtjs/tailwindcss": "^6.8.0",
     "@tailwindcss/typography": "^0.5.9",
     "@types/node": "^18.17.0",
@@ -25,6 +25,6 @@
   "dependencies": {
     "@pinia/nuxt": "^0.4.11",
     "nuxt-icons": "^3.2.1",
-    "pinia": "^2.1.4"
+    "pinia": "^2.1.6"
   }
 }
