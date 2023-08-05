@@ -48,7 +48,7 @@
             @click="themeStore.toggleTheme()"
           >
             <i
-              class="material-icons-outlined text-surface-900 dark:text-surface-200 border rounded-full p-1 scale-75"
+              class="material-icons-outlined theme-icon scale-75"
               :class="{ 'border-surface-900': !themeStore.isDarkTheme }"
               :title="themeStore.isDarkTheme ? 'Light mode' : 'Dark mode'"
             >
@@ -110,7 +110,7 @@
         <nav class="flex items-center">
           <button class="flex" @click="themeStore.toggleTheme()">
             <i
-              class="material-icons-outlined text-surface-900 dark:text-surface-200 border rounded-full p-1 mx-8 scale-90"
+              class="material-icons-outlined theme-icon mx-8 scale-90"
               :class="{ 'border-surface-900': !themeStore.isDarkTheme }"
               :title="themeStore.isDarkTheme ? 'Light mode' : 'Dark mode'"
             >
@@ -142,7 +142,7 @@
     <!-- FOOTER START -->
     <div>
       <footer
-        class="mx-auto px-[10%] py-[6%] grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 auto-cols-auto gap-2 justify-between border-t-2 border-surface-600 dark:border-surface-300"
+        class="relative mx-auto px-[10%] py-[6%] grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 auto-cols-auto gap-2 justify-between border-t-2 border-surface-600 dark:border-surface-300"
       >
         <div class="col-span-full">
           <nuxt-link to="/" @click="scrollToTop()">
@@ -154,13 +154,6 @@
               filled
             />
           </nuxt-link>
-          <p class="text-xs lg:text-sm mb-0">
-            Made with
-            <span class="material-icons-outlined align-text-bottom"
-              >local_fire_department</span
-            >
-            in Reus
-          </p>
         </div>
         <div class="">
           <nav>
@@ -236,6 +229,14 @@
               </li>
             </ul>
           </nav>
+        </div>
+        <div class="absolute inset-x-0 bottom-0 flex justify-end">
+          <p class="text-xs tracking-wide m-4 opacity-60">
+            Made with<span
+              class="material-icons-outlined align-text-bottom scale-[.8]"
+              >local_fire_department</span
+            >by MoltenDevLabs ©
+          </p>
         </div>
       </footer>
     </div>
