@@ -31,7 +31,7 @@
   header,
   footer {
     @apply container min-w-full z-10
-      bg-secondary-50 dark:bg-secondary-900 
+      bg-primary-50 dark:bg-primary-900 
       prose prose-stone dark:prose-invert 
       prose-a:no-underline
       transition-all duration-500 ease-in-out;
