@@ -266,11 +266,4 @@ const scrollToTop = () => {
 };
 </script>
 
-<style scooped>
-.nuxt-icon svg {
-  font-size: 2em;
-  margin-bottom: 0;
-  object-fit: fill;
-  width: fit-content;
-}
-</style>
+<style scooped></style>
