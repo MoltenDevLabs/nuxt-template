@@ -197,7 +197,7 @@ footer a:hover {
       transition-all duration-500;
   }
   .bg-modal {
-    @apply blur-sm brightness-50 pointer-events-none overflow-hidden
+    @apply blur-sm brightness-50 pointer-events-none overflow-hidden z-10
       transition-all duration-500;
   }
 
