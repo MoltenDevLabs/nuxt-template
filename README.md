@@ -37,7 +37,7 @@ The project leverages a cutting-edge tech stack to deliver a seamless and featur
 
 ## Installation & Setup
 
-To get started with the Coral Mussòlidaria Reus Mobile App, follow these setup instructions.
+To get started with the Nuxt 3 template, follow these setup instructions.
 
 ### Project Minimal Starter
 
