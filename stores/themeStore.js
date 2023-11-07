@@ -1,5 +1,5 @@
 export const useThemeStore = defineStore("themeStore", () => {
-  const isDarkTheme = ref(false); // Set light theme by default
+  const isDarkTheme = ref(true); // Set dark theme by default
   const previousTheme = ref(false);
 
   // Fetches the system default theme
